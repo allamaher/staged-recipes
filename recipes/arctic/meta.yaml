@@ -9,6 +9,7 @@ package:
 
 source:
   fn: '{{ name }}-{{ version }}.tar.gz'
+  #url: https://github.com/manahl/{{ name }}/archive/{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   '{{ hash_type }}': '{{ hash_value }}'
 
@@ -29,10 +30,11 @@ requirements:
   build:
     - python
     - setuptools
+    - setuptools-git
     - cython
     - decorator
     - enum34
-    - mockextras
+    #- mockextras
     - pandas
     - pymongo
     - python-dateutil
@@ -43,7 +45,7 @@ requirements:
     - cython
     - decorator
     - enum34
-    - mockextras
+    #- mockextras
     - pandas
     - pymongo
     - python-dateutil
@@ -73,10 +75,10 @@ test:
   requires:
     - lz4
     - mock
-    - mockextras
+    #- mockextras
     - pytest
     - pytest-cov
-    - pytest-server-fixtures
+    #- pytest-server-fixtures
     - pytest-timeout
     - pytest-xdist
 
